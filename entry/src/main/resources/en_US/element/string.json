@@ -11,6 +11,18 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "tab_home",
+      "value": "首页"
+    },
+    {
+      "name": "tab_achievement",
+      "value": "成就"
+    },
+    {
+      "name": "tab_mine",
+      "value": "我的"
     }
   ]
 }

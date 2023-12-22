@@ -3,6 +3,26 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "blueColor",
+      "value": "#007DFF"
+    },
+    {
+      "name": "black",
+      "value": "#000000"
+    },
+    {
+      "name": "primaryRed",
+      "value": "#E92F4F"
+    },
+    {
+      "name": "tabTitleColor",
+      "value": "#999"
+    },
+    {
+      "name": "primaryBgColor",
+      "value": "#F1F3F5"
     }
   ]
 }
