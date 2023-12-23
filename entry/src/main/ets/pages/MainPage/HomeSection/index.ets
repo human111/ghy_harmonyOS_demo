@@ -5,7 +5,7 @@ import { PosterSwiper } from './components/PosterSwiper'
 @Component
 export struct HomeSection {
   build() {
-    Tabs({ barPosition: BarPosition.Start }) {
+    Tabs({ index: 3 }) {
       TabContent() {
         Column() {
           PosterSwiper()
