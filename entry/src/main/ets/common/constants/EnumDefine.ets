@@ -1,6 +1,8 @@
 export enum TabId {
-  HOME,
-  ACHIEVEMENT,
+  DYNAMIC,
+  DISCOVERY,
+  RECORD,
+  MESSAGE,
   MINE
 }
 
