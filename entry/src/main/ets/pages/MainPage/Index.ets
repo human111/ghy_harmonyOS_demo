@@ -57,7 +57,6 @@ struct Index {
         HomeSection()
       }
       .tabBar(this.TabBuilder(TabId.DYNAMIC))
-      // .align(Alignment.Start)
 
       TabContent() {
         Text('ddd')
@@ -80,7 +79,7 @@ struct Index {
         MineSection()
       }
       .tabBar(this.TabBuilder(TabId.MINE))
-      .backgroundColor(Color.Orange)
+      .backgroundColor('#f0f0f0')
     }
     .scrollable(false)
     .allSize()
