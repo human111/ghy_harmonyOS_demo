@@ -20,6 +20,13 @@ export class CssConst {
   static readonly THOUSANDTH_940: string = '94%'; // ‘90%’
   static readonly THOUSANDTH_1000: string = '100%'; // ‘100%’
 
+  /**
+   * Search input
+   */
+  static readonly SEARCH_HEIGHT: string = '5.1%';
+  static readonly SEARCH_WIDTH: string = '81.1%';
+  static readonly SEARCH_ICON: string = '/resources/base/media/ic_search.png';
+
   // fontWeight
   static readonly FONT_WEIGHT_400: number = 400;
   static readonly FONT_WEIGHT_500: number = 500;
