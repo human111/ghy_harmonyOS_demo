@@ -1,3 +1,4 @@
+import { PersonalDynamics } from './PersonalDynamics'
 @Component
 export struct OperationRecord {
   @State currentIndex: number = 0
@@ -23,7 +24,7 @@ export struct OperationRecord {
     Column() {
       Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#00CB87')
+          PersonalDynamics()
         }.tabBar(this.TabBuilder(0, '动态'))
 
         TabContent() {
@@ -42,10 +43,9 @@ export struct OperationRecord {
       .onChange((index: number) => {
         this.currentIndex = index
       })
-      // .width(360)
-      .height(296)
-      // .backgroundColor('#F1F3F5')
     }
+    .height('100%')
+    // .constraintSize({minHeight: '50%'})
     .width('100%')
     .padding({left: '12vp', right: '12vp'})
     .margin({bottom: '20vp'})
