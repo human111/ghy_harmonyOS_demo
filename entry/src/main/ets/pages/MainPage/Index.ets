@@ -2,6 +2,7 @@
 import { CssConst } from '../../common/constants/CssConst';
 import { TabId } from '../../common/constants/EnumDefine';
 import { HomeSection } from './HomeSection';
+import { MessageSection } from './MessageSection';
 import { MineSection } from './MineSection';
 import { NavList } from './models/model/NavModel';
 
@@ -52,7 +53,7 @@ struct Index {
   }
 
   build() {
-    Tabs({ barPosition: BarPosition.End, controller: this.tabController, index: 4 }) {
+    Tabs({ barPosition: BarPosition.End, controller: this.tabController, index: 3 }) {
       TabContent() {
         HomeSection()
       }
@@ -69,11 +70,10 @@ struct Index {
       .tabBar(this.TabBuilder1(TabId.RECORD))
 
       TabContent() {
-        Text('TabId.MESSAGE')
-          .borderWidth({ bottom: 1 })
-          .borderColor($r('app.color.primaryBgColor'))
+        MessageSection()
       }
       .tabBar(this.TabBuilder(TabId.MESSAGE))
+      .backgroundColor('#f0f0f0')
 
       TabContent() {
         MineSection()
