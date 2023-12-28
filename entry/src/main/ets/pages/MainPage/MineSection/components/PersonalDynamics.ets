@@ -26,7 +26,7 @@ export struct PersonalDynamics {
         Image($r('app.media.ic_delete'))
           .width('23vp')
           .height('23vp')
-          .margin({right: '10vp'})
+          .margin({right: '4vp'})
       }
       .padding({top: '18vp'})
       .width('100%')
@@ -138,6 +138,10 @@ export struct PersonalDynamics {
       .height('52vp')
 
 
-    }.width('100%').height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .padding({left: '6vp', right: '6vp'})
+
   }
 }

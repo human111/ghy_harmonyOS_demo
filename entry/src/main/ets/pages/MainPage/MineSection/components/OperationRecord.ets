@@ -1,3 +1,5 @@
+import { AccompanimentChorus } from './AccompanimentChorus'
+import { MySongs } from './MySongs'
 import { PersonalDynamics } from './PersonalDynamics'
 @Component
 export struct OperationRecord {
@@ -28,11 +30,11 @@ export struct OperationRecord {
         }.tabBar(this.TabBuilder(0, '动态'))
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#007DFF')
+          MySongs()
         }.tabBar(this.TabBuilder(1, '作品6'))
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+          AccompanimentChorus()
         }.tabBar(this.TabBuilder(2, '伴奏与合唱'))
       }
       .vertical(false)
@@ -45,11 +47,9 @@ export struct OperationRecord {
       })
     }
     .height('100%')
-    // .constraintSize({minHeight: '50%'})
     .width('100%')
     .padding({left: '12vp', right: '12vp'})
     .margin({bottom: '20vp'})
     .backgroundColor('#FFFFFF')
-
   }
 }
