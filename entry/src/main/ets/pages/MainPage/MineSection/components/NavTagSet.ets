@@ -1,3 +1,5 @@
+import router from '@ohos.router';
+
 @Component
 export struct NavTagSet {
   @State tagSet: Array<Array<any>> = [
@@ -14,6 +16,18 @@ export struct NavTagSet {
       {icon: $r("app.media.mine_more"), iconDesc: '更多'},
     ]
   ]
+
+  onJumpClick(): void {
+    router.pushUrl({
+      url: 'pages/Mine/Accompaniment' // 目标url
+    }, router.RouterMode.Standard, (err) => {
+      if (err) {
+        console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+        return;
+      }
+      console.info('Invoke pushUrl succeeded.');
+    });
+  }
 
   build() {
     Column() {
@@ -38,6 +52,9 @@ export struct NavTagSet {
               .padding({
                 top: '20vp',
                 bottom: '16vp'
+              })
+              .onClick(() => {
+                this.onJumpClick()
               })
 
             }
