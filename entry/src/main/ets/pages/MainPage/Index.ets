@@ -1,6 +1,7 @@
 
 import { CssConst } from '../../common/constants/CssConst';
 import { TabId } from '../../common/constants/EnumDefine';
+import { DiscoverySection } from './DiscoverySection';
 import { HomeSection } from './HomeSection';
 import { MessageSection } from './MessageSection';
 import { MineSection } from './MineSection';
@@ -53,16 +54,17 @@ struct Index {
   }
 
   build() {
-    Tabs({ barPosition: BarPosition.End, controller: this.tabController, index: 3 }) {
+    Tabs({ barPosition: BarPosition.End, controller: this.tabController, index: 1 }) {
       TabContent() {
         HomeSection()
       }
       .tabBar(this.TabBuilder(TabId.DYNAMIC))
 
       TabContent() {
-        Text('ddd')
+        DiscoverySection()
       }
       .tabBar(this.TabBuilder(TabId.DISCOVERY))
+      .backgroundColor('#f0f0f0')
 
       TabContent() {
         Text('ddd')
