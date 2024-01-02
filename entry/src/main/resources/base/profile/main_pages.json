@@ -4,6 +4,7 @@
     "pages/Mine/Accompaniment",
     "pages/Mine/LocalRecord",
     "pages/Mine/KCoinAccount",
-    "pages/Mine/SongCollection"
+    "pages/Mine/SongCollection",
+    "pages/Message/ReceiveGifts"
   ]
 }
