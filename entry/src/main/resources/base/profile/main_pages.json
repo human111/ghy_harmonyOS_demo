@@ -3,6 +3,7 @@
     "pages/MainPage/Index",
     "pages/Mine/Accompaniment",
     "pages/Mine/LocalRecord",
-    "pages/Mine/KCoinAccount"
+    "pages/Mine/KCoinAccount",
+    "pages/Mine/SongCollection"
   ]
 }

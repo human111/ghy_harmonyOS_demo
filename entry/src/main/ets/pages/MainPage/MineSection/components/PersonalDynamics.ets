@@ -39,6 +39,10 @@ export struct PersonalDynamics {
 
       Row() {
         Stack({ }) {
+          Image($r('app.media.mine_song_bg'))
+            .width('111vp')
+            .height('111vp')
+
           Column(){}.width('100%').height('100%').backgroundColor('#a2c4c9').opacity(0.7)
           Image($r('app.media.mine_song_record')).width('47vp').height('47vp')
           Image($r('app.media.mine_song_play'))
@@ -51,14 +55,14 @@ export struct PersonalDynamics {
         }
         .width('111vp')
         .height('111vp')
-        .backgroundImage(
-          $r('app.media.mine_song_bg'),
-          ImageRepeat.NoRepeat
-        )
-        .backgroundImageSize({
-          width: '111vp',
-          height: '111vp'
-        })
+        // .backgroundImage(
+        //   $r('app.media.mine_song_bg'),
+        //   ImageRepeat.NoRepeat
+        // )
+        // .backgroundImageSize({
+        //   width: '111vp',
+        //   height: '111vp'
+        // })
 
         Column() {
           Row() {

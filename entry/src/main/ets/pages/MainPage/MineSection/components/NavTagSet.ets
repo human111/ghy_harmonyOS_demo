@@ -1,32 +1,35 @@
 import router from '@ohos.router';
+import RoutersConst from '../../../../common/constants/RoutersConst';
 
 @Component
 export struct NavTagSet {
   @State tagSet: Array<Array<any>> = [
     [
-      {icon: $r("app.media.mine_accompaniment"), iconDesc: '我的伴奏'},
-      {icon: $r("app.media.mine_local_record"), iconDesc: '本地录音'},
-      {icon: $r("app.media.mine_vip"), iconDesc: '我的VIP'},
-      {icon: $r("app.media.mine_k_coin"), iconDesc: 'K币账户'},
+      {icon: $r("app.media.mine_accompaniment"), iconDesc: '我的伴奏', iconUrl: RoutersConst.MINE_ACCOMPANIMENT_URL},
+      {icon: $r("app.media.mine_local_record"), iconDesc: '本地录音', iconUrl: RoutersConst.MINE_LOCAL_RECORD_URL},
+      {icon: $r("app.media.mine_vip"), iconDesc: '我的VIP', iconUrl: ''},
+      {icon: $r("app.media.mine_k_coin"), iconDesc: 'K币账户', iconUrl: RoutersConst.MINE_KCOIN_ACCOUNT_URL},
     ],
     [
-      {icon: $r("app.media.mine_collect"), iconDesc: '我的收藏'},
-      {icon: $r("app.media.mine_download"), iconDesc: '本地下载'},
-      {icon: $r("app.media.mine_transpond"), iconDesc: '我的转发'},
-      {icon: $r("app.media.mine_more"), iconDesc: '更多'},
+      {icon: $r("app.media.mine_collect"), iconDesc: '我的收藏', iconUrl: RoutersConst.MINE_SONG_COLLECTION_URL},
+      {icon: $r("app.media.mine_download"), iconDesc: '本地下载', iconUrl: ''},
+      {icon: $r("app.media.mine_transpond"), iconDesc: '我的转发', iconUrl: ''},
+      {icon: $r("app.media.mine_more"), iconDesc: '更多', iconUrl: ''},
     ]
   ]
 
-  onJumpClick(): void {
-    router.pushUrl({
-      url: 'pages/Mine/Accompaniment' // 目标url
-    }, router.RouterMode.Standard, (err) => {
-      if (err) {
-        console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
-        return;
-      }
-      console.info('Invoke pushUrl succeeded.');
-    });
+  onJumpClick(url: string): void {
+    if (url) {
+      router.pushUrl({
+        url: url // 目标url
+      }, router.RouterMode.Standard, (err) => {
+        if (err) {
+          console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        console.info('Invoke pushUrl succeeded.');
+      });
+    }
   }
 
   build() {
@@ -54,7 +57,7 @@ export struct NavTagSet {
                 bottom: '16vp'
               })
               .onClick(() => {
-                this.onJumpClick()
+                this.onJumpClick(colItem.iconUrl)
               })
 
             }
