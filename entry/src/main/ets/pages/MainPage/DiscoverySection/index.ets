@@ -8,7 +8,7 @@ import { SwiperBg } from './components/SwiperBg'
 export struct DiscoverySection {
   @State tagSet: Array<any> = [
     {icon: $r("app.media.discovery_megagame"), iconDesc: '大赛', iconUrl: RoutersConst.DISCOVERY_CONTEST_URL},
-    {icon: $r("app.media.discovery_hot_song_menu"), iconDesc: '热门歌单', iconUrl: ''},
+    {icon: $r("app.media.discovery_hot_song_menu"), iconDesc: '热门歌单', iconUrl: 'RoutersConst.DISCOVERY_HOT_LIST_URL'},
     {icon: $r("app.media.discovery_jury"), iconDesc: '我是评委', iconUrl: ''},
     {icon: $r("app.media.discovery_certified_singer"), iconDesc: '认证歌手', iconUrl: ''},
   ]

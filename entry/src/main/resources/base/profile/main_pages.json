@@ -9,6 +9,7 @@
     "pages/Message/RecentAudience",
     "pages/Message/PrivateMessage",
     "pages/Discovery/SearchUser",
-    "pages/Discovery/Contest"
+    "pages/Discovery/Contest",
+    "pages/Discovery/HotList"
   ]
 }
