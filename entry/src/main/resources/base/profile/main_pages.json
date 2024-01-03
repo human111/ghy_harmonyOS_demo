@@ -5,6 +5,8 @@
     "pages/Mine/LocalRecord",
     "pages/Mine/KCoinAccount",
     "pages/Mine/SongCollection",
-    "pages/Message/ReceiveGifts"
+    "pages/Message/ReceiveGifts",
+    "pages/Message/RecentAudience",
+    "pages/Message/PrivateMessage"
   ]
 }

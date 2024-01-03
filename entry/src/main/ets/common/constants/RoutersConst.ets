@@ -13,5 +13,14 @@ export default class RoutersConst {
 
   static readonly MINE_SONG_COLLECTION_URL: string = 'pages/Mine/SongCollection';
   static readonly MINE_SONG_COLLECTION_TAG: string = '[MineSongCollection]';
+
+  static readonly MESSAGE_RECEIVE_GIFTS_URL: string = 'pages/Message/ReceiveGifts';
+  static readonly MESSAGE_RECEIVE_GIFTS_TAG: string = '[MessageReceiveGifts]';
+
+  static readonly MESSAGE_RECENT_AUDIENCE_URL: string = 'pages/Message/RecentAudience';
+  static readonly MESSAGE_RECENT_AUDIENCE_TAG: string = '[MessageRecentAudience]';
+
+  static readonly MESSAGE_PRIVATE_URL: string = 'pages/Message/PrivateMessage';
+  static readonly MESSAGE_PRIVATE_TAG: string = '[MessagePrivateMessage]';
 }
 

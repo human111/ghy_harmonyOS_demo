@@ -1,12 +1,29 @@
+import router from '@ohos.router';
+import RoutersConst from '../../../common/constants/RoutersConst'
+
 import { Comment } from './components/Comment'
 @Component
 export struct MessageSection {
   @State tagSet: Array<any> = [
-    {icon: $r("app.media.message_private_letter"), iconDesc: '私信'},
-    {icon: $r("app.media.message_recent_audience"), iconDesc: '最近听众'},
-    {icon: $r("app.media.message_receive_presents"), iconDesc: '收到礼物'},
-    {icon: $r("app.media.message_sys_info"), iconDesc: '系统消息'},
+    {icon: $r("app.media.message_private_letter"), iconDesc: '私信', iconUrl: RoutersConst.MESSAGE_PRIVATE_URL},
+    {icon: $r("app.media.message_recent_audience"), iconDesc: '最近听众', iconUrl: RoutersConst.MESSAGE_RECENT_AUDIENCE_URL},
+    {icon: $r("app.media.message_receive_presents"), iconDesc: '收到礼物', iconUrl: RoutersConst.MESSAGE_RECEIVE_GIFTS_URL},
+    {icon: $r("app.media.message_sys_info"), iconDesc: '系统消息', iconUrl: ''},
   ]
+
+  onJumpClick(url: string): void {
+    if (url) {
+      router.pushUrl({
+        url: url // 目标url
+      }, router.RouterMode.Standard, (err) => {
+        if (err) {
+          console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        console.info('Invoke pushUrl succeeded.');
+      });
+    }
+  }
 
   build() {
     Column() {
@@ -44,6 +61,9 @@ export struct MessageSection {
             .width('100%')
             .height('100%')
             .justifyContent(FlexAlign.Center)
+            .onClick(() => {
+              this.onJumpClick(rowItem.iconUrl)
+            })
 
           }
         }, (rowItem: any, index?: number) => index + JSON.stringify(rowItem))
