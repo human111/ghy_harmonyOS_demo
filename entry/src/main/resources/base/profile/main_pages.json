@@ -7,6 +7,8 @@
     "pages/Mine/SongCollection",
     "pages/Message/ReceiveGifts",
     "pages/Message/RecentAudience",
-    "pages/Message/PrivateMessage"
+    "pages/Message/PrivateMessage",
+    "pages/Discovery/SearchUser",
+    "pages/Discovery/Contest"
   ]
 }

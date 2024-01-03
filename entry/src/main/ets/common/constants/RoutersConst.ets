@@ -22,5 +22,11 @@ export default class RoutersConst {
 
   static readonly MESSAGE_PRIVATE_URL: string = 'pages/Message/PrivateMessage';
   static readonly MESSAGE_PRIVATE_TAG: string = '[MessagePrivateMessage]';
+
+  static readonly DISCOVERY_SEARCH_USER_URL: string = 'pages/Discovery/SearchUser';
+  static readonly DISCOVERY_SEARCH_USER_TAG: string = '[DiscoverySearchUser]';
+
+  static readonly DISCOVERY_CONTEST_URL: string = 'pages/Discovery/Contest';
+  static readonly DISCOVERY_CONTEST_TAG: string = '[DiscoveryContest]';
 }
 

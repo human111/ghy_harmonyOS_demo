@@ -1,3 +1,5 @@
+import router from '@ohos.router'
+import RoutersConst from '../../../common/constants/RoutersConst'
 import { CommHotSection } from './components/CommHotSection'
 import { PopularityRanking } from './components/PopularityRanking'
 import { SwiperBg } from './components/SwiperBg'
@@ -5,10 +7,10 @@ import { SwiperBg } from './components/SwiperBg'
 @Component
 export struct DiscoverySection {
   @State tagSet: Array<any> = [
-    {icon: $r("app.media.discovery_megagame"), iconDesc: '大赛'},
-    {icon: $r("app.media.discovery_hot_song_menu"), iconDesc: '热门歌单'},
-    {icon: $r("app.media.discovery_jury"), iconDesc: '我是评委'},
-    {icon: $r("app.media.discovery_certified_singer"), iconDesc: '认证歌手'},
+    {icon: $r("app.media.discovery_megagame"), iconDesc: '大赛', iconUrl: RoutersConst.DISCOVERY_CONTEST_URL},
+    {icon: $r("app.media.discovery_hot_song_menu"), iconDesc: '热门歌单', iconUrl: ''},
+    {icon: $r("app.media.discovery_jury"), iconDesc: '我是评委', iconUrl: ''},
+    {icon: $r("app.media.discovery_certified_singer"), iconDesc: '认证歌手', iconUrl: ''},
   ]
 
   @State hotCardList: Array<any> = [
@@ -116,6 +118,20 @@ export struct DiscoverySection {
 
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+  onJumpClick(url: string): void {
+    if (url) {
+      router.pushUrl({
+        url: url // 目标url
+      }, router.RouterMode.Standard, (err) => {
+        if (err) {
+          console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        console.info('Invoke pushUrl succeeded.');
+      });
+    }
+  }
+
   build() {
     Column() {
       Stack({alignContent: Alignment.End}) {
@@ -131,6 +147,9 @@ export struct DiscoverySection {
           .width('25vp')
           .height('25vp')
           .margin({right: '10vp'})
+          .onClick(() => {
+            this.onJumpClick(RoutersConst.DISCOVERY_SEARCH_USER_URL)
+          })
       }
 
       Scroll() {
@@ -156,6 +175,9 @@ export struct DiscoverySection {
                 .width('100%')
                 .height('100%')
                 .justifyContent(FlexAlign.Center)
+                .onClick(() => {
+                  this.onJumpClick(rowItem.iconUrl)
+                })
 
               }
             }, (rowItem: any, index?: number) => index + JSON.stringify(rowItem))
