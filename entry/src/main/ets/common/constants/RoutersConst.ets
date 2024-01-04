@@ -31,5 +31,7 @@ export default class RoutersConst {
 
   static readonly DISCOVERY_HOT_LIST_URL: string = 'pages/Discovery/HotList';
   static readonly DISCOVERY_HOT_LIST_TAG: string = '[DiscoveryHotList]';
-}
 
+  static readonly DISCOVERY_HOT_LIST_DETAIL_URL: string = 'pages/Discovery/HotListDetail';
+  static readonly DISCOVERY_HOT_LIST_DETAIL_TAG: string = '[DiscoveryHotListDetail]';
+}

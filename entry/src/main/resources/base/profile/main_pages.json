@@ -10,6 +10,7 @@
     "pages/Message/PrivateMessage",
     "pages/Discovery/SearchUser",
     "pages/Discovery/Contest",
-    "pages/Discovery/HotList"
+    "pages/Discovery/HotList",
+    "pages/Discovery/HotListDetail"
   ]
 }

@@ -1,3 +1,5 @@
+import router from '@ohos.router'
+import RoutersConst from '../../common/constants/RoutersConst'
 @Entry
 @Component
 struct HotList {
@@ -70,6 +72,17 @@ struct HotList {
               .borderRadius('8vp')
               .backgroundColor('#FFFFFF')
               .clip(true)
+              .onClick(() => {
+                router.pushUrl({
+                  url: RoutersConst.DISCOVERY_HOT_LIST_DETAIL_URL // 目标url
+                }, router.RouterMode.Standard, (err) => {
+                  if (err) {
+                    console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+                    return;
+                  }
+                  console.info('Invoke pushUrl succeeded.');
+                });
+              })
             }
           })
         }.width("100%").height("100%")
