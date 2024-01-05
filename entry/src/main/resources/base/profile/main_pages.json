@@ -11,6 +11,7 @@
     "pages/Discovery/SearchUser",
     "pages/Discovery/Contest",
     "pages/Discovery/HotList",
-    "pages/Discovery/HotListDetail"
+    "pages/Discovery/HotListDetail",
+    "pages/Discovery/CertifiedSinger"
   ]
 }

@@ -34,4 +34,7 @@ export default class RoutersConst {
 
   static readonly DISCOVERY_HOT_LIST_DETAIL_URL: string = 'pages/Discovery/HotListDetail';
   static readonly DISCOVERY_HOT_LIST_DETAIL_TAG: string = '[DiscoveryHotListDetail]';
+
+  static readonly DISCOVERY_CERTIFIED_SINGER_URL: string = 'pages/Discovery/CertifiedSinger';
+  static readonly DISCOVERY_CERTIFIED_SINGER_TAG: string = '[DiscoveryCertifiedSinger]';
 }
