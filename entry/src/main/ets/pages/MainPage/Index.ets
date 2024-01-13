@@ -1,4 +1,5 @@
 
+import router from '@ohos.router';
 import { CssConst } from '../../common/constants/CssConst';
 import { TabId } from '../../common/constants/EnumDefine';
 import { DiscoverySection } from './DiscoverySection';
@@ -53,6 +54,20 @@ struct Index {
     .allSize()
   }
 
+  onJumpClick(url: string): void {
+    if (url) {
+      router.pushUrl({
+        url: url // 目标url
+      }, router.RouterMode.Standard, (err) => {
+        if (err) {
+          console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        console.info('Invoke pushUrl succeeded.');
+      });
+    }
+  }
+
   build() {
     Tabs({ barPosition: BarPosition.End, controller: this.tabController, index: 1 }) {
       TabContent() {
@@ -67,7 +82,11 @@ struct Index {
       .backgroundColor('#f0f0f0')
 
       TabContent() {
-        Text('ddd')
+        Column() {
+          Button('testSticky').onClick(() => {
+            this.onJumpClick('pages/Discovery/TestSticky')
+          })
+        }.width('100%').height('100%')
       }
       .tabBar(this.TabBuilder1(TabId.RECORD))
 

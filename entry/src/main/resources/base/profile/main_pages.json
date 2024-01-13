@@ -12,6 +12,7 @@
     "pages/Discovery/Contest",
     "pages/Discovery/HotList",
     "pages/Discovery/HotListDetail",
-    "pages/Discovery/CertifiedSinger"
+    "pages/Discovery/CertifiedSinger",
+    "pages/Discovery/TestSticky"
   ]
 }

@@ -3,6 +3,7 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 
 export default class EntryAbility extends UIAbility {
+  // UIAbility的生命周期只包含创建/销毁/前台/后台等状态
   onCreate(want, launchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
@@ -11,6 +12,7 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
+  // 与显示相关的状态通过WindowStage的事件暴露给开发者。
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');

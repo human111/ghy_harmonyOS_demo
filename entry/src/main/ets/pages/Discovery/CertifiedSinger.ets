@@ -6,8 +6,10 @@ struct CertifiedSinger {
   @State searchTagsList: Array<any> = []
   private mockSearchTagsData: any = searchTagsData
   // private mockSingerListData: any = singerListData.slice(0,20)
+  private scroller: Scroller = new Scroller()
 
-  private singersArr: any[] = singers
+  private singersArr: any[] = singers.slice(0,4)
+
 
   aboutToAppear() {
     for (var key in this.mockSearchTagsData) {
@@ -87,14 +89,16 @@ struct CertifiedSinger {
         .padding({bottom: '12vp'})
       }, (item: any, index?: number) => index + JSON.stringify(item))
 
-
-    }.width('100%').padding({left: '10vp', right: '10vp'})
+    }
+      .width('100%')
+      .padding({left: '10vp', right: '10vp'})
+      .id(singer.title)
   }
 
 
   build() {
     Column() {
-      Scroll() {
+      Scroll(this.scroller) {
         Column() {
           ForEach(this.searchTagsList, (item: any) =>  {
             this.SearchConditionItem(item)
@@ -108,6 +112,13 @@ struct CertifiedSinger {
       }
       .scrollable(ScrollDirection.Vertical)
       .edgeEffect(EdgeEffect.None)
+      .onScroll((xOffset: number, yOffset: number) => {
+        console.info('onScroll: ', xOffset + ' ' + yOffset)
+      })
+      .onScrollEdge((side: Edge) => {
+        console.info('To the edge: ', side)
+        console.info('getInspectorByKey: ', getInspectorByKey("热"))
+      })
     }
     .width('100%')
     .height('100%')
