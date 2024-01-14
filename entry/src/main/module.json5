@@ -32,6 +32,21 @@
           }
         ]
       }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "TestEntryFormAbility",
+        "srcEntry": "./ets/testentryformability/TestEntryFormAbility.ts",
+        "label": "$string:TestEntryFormAbility_label",
+        "description": "$string:TestEntryFormAbility_desc",
+        "type": "form",
+        "metadata": [
+          {
+            "name": "ohos.extension.form", // 键名称为固定字符串，不能修改。
+            "resource": "$profile:form_config" // 使用开发视图的resources/base/profile/目录下的form_config.json作为卡片profile配置文件
+          }
+        ]
+      }
     ]
   }
 }

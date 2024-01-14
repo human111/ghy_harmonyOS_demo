@@ -23,6 +23,14 @@
     {
       "name": "tab_mine",
       "value": "我的"
+    },
+    {
+      "name": "TestEntryFormAbility_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "TestEntryFormAbility_label",
+      "value": "form_label"
     }
   ]
 }
