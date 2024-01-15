@@ -13,6 +13,7 @@
     "pages/Discovery/HotList",
     "pages/Discovery/HotListDetail",
     "pages/Discovery/CertifiedSinger",
-    "pages/Discovery/TestSticky"
+    "pages/Discovery/TestSticky",
+    "testpages/WebPage"
   ]
 }

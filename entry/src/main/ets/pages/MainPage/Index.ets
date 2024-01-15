@@ -86,6 +86,9 @@ struct Index {
           Button('testSticky').onClick(() => {
             this.onJumpClick('pages/Discovery/TestSticky')
           })
+          Button('testWebPage').onClick(() => {
+            this.onJumpClick('testpages/WebPage')
+          })
         }.width('100%').height('100%')
       }
       .tabBar(this.TabBuilder1(TabId.RECORD))
