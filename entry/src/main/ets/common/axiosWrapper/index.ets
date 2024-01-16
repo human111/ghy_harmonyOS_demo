@@ -26,10 +26,10 @@ export interface IServerResponse<Data> {
   * @param response Axios 响应体实例
   */
 const responseHandler = (response: AxiosResponse<IServerResponse<any>>) => {
-    // console.info('responseHandler', JSON.stringify(response.data))
-    hilog.info(0x0000, 'responseHandler', JSON.stringify(response));
+    console.info('responseHandler', JSON.stringify(response.data))
+    // hilog.info(0x0000, 'responseHandler', JSON.stringify(response));
     if (response.data && response.data.code === 0) {
-        return response.data.data;
+        return response.data.data || response.data.result;
     }
 
     throw Error((response.data && response.data.msg) || '网络异常，请稍后再试');

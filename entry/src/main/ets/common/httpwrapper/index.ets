@@ -14,6 +14,7 @@ const get = async (url: string) => {
     connectTimeout: HttpConstant.CONNECT_TIMEOUT
   } as http.HttpRequestOptions;
   let result = await request.request(url, options);
+  // console.info('===456==:', JSON.stringify(result))
   return result;
 }
 

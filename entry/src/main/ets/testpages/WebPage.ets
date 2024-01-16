@@ -15,7 +15,8 @@ struct WebPage {
   @State webSrc: string = HttpConstant.SERVER;
 
   aboutToAppear() {
-    this.testAxios()
+    // this.testAxios()
+    this.onHttp()
   }
 
   async testAxios() {
@@ -24,6 +25,15 @@ struct WebPage {
       console.info('ghy----:',responseData)
     } catch (e) {
       console.info(e)
+    }
+  }
+
+  // ⌘] 向右缩进  ⌘[ 向左缩进
+  async  onHttp() {
+    try {
+      // /api/getRecommend
+      let result = await request.get('http://192.168.1.2:8080/api/getRecommend');
+    } catch (error) {
     }
   }
 
@@ -81,6 +91,8 @@ struct WebPage {
     .backgroundImage($r('app.media.ghy_singer_2', ImageRepeat.NoRepeat))
     .backgroundImageSize(ImageSize.Cover)
   }
+
+
 
   async onRequest() {
     if (this.webVisibility === Visibility.Hidden) {

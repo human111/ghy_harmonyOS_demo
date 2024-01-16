@@ -2,6 +2,7 @@
 import router from '@ohos.router';
 import { CssConst } from '../../common/constants/CssConst';
 import { TabId } from '../../common/constants/EnumDefine';
+import { TestHttp } from '../test/TestHttp';
 import { DiscoverySection } from './DiscoverySection';
 import { HomeSection } from './HomeSection';
 import { MessageSection } from './MessageSection';
@@ -83,6 +84,7 @@ struct Index {
 
       TabContent() {
         Column() {
+          TestHttp()
           Button('testSticky').onClick(() => {
             this.onJumpClick('pages/Discovery/TestSticky')
           })
