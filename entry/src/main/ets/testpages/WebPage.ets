@@ -4,6 +4,8 @@ import promptAction from '@ohos.promptAction'
 import request from '../common/httpwrapper';
 import HttpConstant from '../common/httpwrapper/HttpConstant';
 
+import axiosHttp from '../common/axiosWrapper';
+
 @Entry
 @Component
 struct WebPage {
@@ -11,6 +13,19 @@ struct WebPage {
   @State buttonName: string = 'request';
   @State webVisibility: Visibility = Visibility.Hidden;
   @State webSrc: string = HttpConstant.SERVER;
+
+  aboutToAppear() {
+    this.testAxios()
+  }
+
+  async testAxios() {
+    try {
+      let responseData = await axiosHttp.get('http://192.168.1.2:8080/api/getRecommend')
+      console.info('ghy----:',responseData)
+    } catch (e) {
+      console.info(e)
+    }
+  }
 
   build() {
     Column() {
